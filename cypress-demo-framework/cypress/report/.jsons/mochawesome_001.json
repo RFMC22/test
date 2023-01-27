@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-30T18:39:08.867Z",
+    "end": "2022-10-30T18:39:13.979Z",
+    "duration": 5112,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ca914196-a8cd-4655-babb-d7dd42f44507",
+      "title": "",
+      "fullFile": "cypress/integration/pom/homeSauceFixture.spec.js",
+      "file": "cypress/integration/pom/homeSauceFixture.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e620ea79-9850-47a5-81d5-22b19b9c3d66",
+          "title": "Home Sauce Demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login to inventory page",
+              "fullTitle": "Home Sauce Demo should login to inventory page",
+              "timedOut": null,
+              "duration": 882,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername(test.username);\n_homeSaucePage.default.typePassword(test.password);\n_homeSaucePage.default.clickLogin();\nif (test.name === 'should login to inventory page') {\n  _inventoryPage.default.elements.titleSpan().should('have.text', test.expected);\n} else {\n  _homeSaucePage.default.elements.errorMessage().should('have.text', test.expected);\n}",
+              "err": {},
+              "uuid": "28200052-500c-4ee1-b12f-693752fe4c09",
+              "parentUUID": "e620ea79-9850-47a5-81d5-22b19b9c3d66",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display incorrect username message",
+              "fullTitle": "Home Sauce Demo should display incorrect username message",
+              "timedOut": null,
+              "duration": 818,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername(test.username);\n_homeSaucePage.default.typePassword(test.password);\n_homeSaucePage.default.clickLogin();\nif (test.name === 'should login to inventory page') {\n  _inventoryPage.default.elements.titleSpan().should('have.text', test.expected);\n} else {\n  _homeSaucePage.default.elements.errorMessage().should('have.text', test.expected);\n}",
+              "err": {},
+              "uuid": "1f54a9b5-27bb-4363-a069-6ded6be06e7b",
+              "parentUUID": "e620ea79-9850-47a5-81d5-22b19b9c3d66",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display incorrect password message",
+              "fullTitle": "Home Sauce Demo should display incorrect password message",
+              "timedOut": null,
+              "duration": 837,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername(test.username);\n_homeSaucePage.default.typePassword(test.password);\n_homeSaucePage.default.clickLogin();\nif (test.name === 'should login to inventory page') {\n  _inventoryPage.default.elements.titleSpan().should('have.text', test.expected);\n} else {\n  _homeSaucePage.default.elements.errorMessage().should('have.text', test.expected);\n}",
+              "err": {},
+              "uuid": "a41a17e4-cb1b-4b60-b711-62e83ed242ba",
+              "parentUUID": "e620ea79-9850-47a5-81d5-22b19b9c3d66",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display locked out message",
+              "fullTitle": "Home Sauce Demo should display locked out message",
+              "timedOut": null,
+              "duration": 854,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homeSaucePage.default.typeUsername(test.username);\n_homeSaucePage.default.typePassword(test.password);\n_homeSaucePage.default.clickLogin();\nif (test.name === 'should login to inventory page') {\n  _inventoryPage.default.elements.titleSpan().should('have.text', test.expected);\n} else {\n  _homeSaucePage.default.elements.errorMessage().should('have.text', test.expected);\n}",
+              "err": {},
+              "uuid": "7281a12a-085c-4a13-b50b-a0abc024e6e0",
+              "parentUUID": "e620ea79-9850-47a5-81d5-22b19b9c3d66",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "28200052-500c-4ee1-b12f-693752fe4c09",
+            "1f54a9b5-27bb-4363-a069-6ded6be06e7b",
+            "a41a17e4-cb1b-4b60-b711-62e83ed242ba",
+            "7281a12a-085c-4a13-b50b-a0abc024e6e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\report\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Joan Media Demo Report",
+        "embeddedScreenshots": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

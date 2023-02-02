@@ -19,7 +19,7 @@ pipeline{
     stage('Testing'){
       steps{
         bat "cd cypress-demo-framework && npm i"
-        bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+        bat "cd cypress-demo-framework && npx cypress run --browser ${BROWSER} --spec ${SPEC}"
       }
     }
     stage('Deploy'){

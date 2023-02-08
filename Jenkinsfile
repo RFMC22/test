@@ -20,6 +20,7 @@ pipeline{
       steps{
         bat "cd cypress-demo-framework && npm i"
         bat "cd cypress-demo-framework && npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+        bat "cd cd cypress-demo-framework && npx jrm cypress/reports/results.xml cypress/reports/junit/*.xml"
       }
     }
     stage('Deploy'){
@@ -31,7 +32,7 @@ pipeline{
 
   post{
     always{
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress-demo-framework/cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress-demo-framework/cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
       junit 'cypress-demo-framework/cypress/reports/junit/*.xml'
     }
   }

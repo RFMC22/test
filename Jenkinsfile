@@ -20,7 +20,7 @@ pipeline{
       steps{
         bat "cd cypress-demo-framework && npm i"
         bat "cd cypress-demo-framework && npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-        bat "cd cd cypress-demo-framework && npx jrm cypress/reports/results.xml cypress/reports/junit/*.xml"
+        bat "cd cypress-demo-framework && npx jrm cypress/reports/results.xml cypress/reports/junit/*.xml"
       }
     }
     stage('Deploy'){

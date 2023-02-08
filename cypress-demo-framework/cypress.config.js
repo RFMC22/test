@@ -4,20 +4,18 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   projectId: 'ioceso',
   screenshotOnRunFailure: true,
-  reporter: 'cypress-mochawesome-reporter',
+  reporter: 'cypress-multi-reporters',
   reporterOptions: {
-    reportDir: 'cypress/report',
-    charts: true,
-    reportPageTitle: 'Joan Media Demo Report',
-    embeddedScreenshots: true,
-  },
-  env: {
-    db: {
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'cypress_test',
+    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+    cypressMochawesomeReporterReporterOptions: {
+      reportDir: 'cypress/reports',
+      charts: true,
+      embeddedScreenshots: true,
+      inlineAssets: true
     },
+    mochaJunitReporterReporterOptions: {
+      mochaFile: "cypress/reports/junit/results-[hash].xml",
+    }
   },
   e2e: {
     // We've imported your old cypress plugins here.

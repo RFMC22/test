@@ -15,16 +15,25 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-};
 
 // cypress/plugins/index.js
 module.exports = (on, config) => {
   // optional: register cypress-grep plugin code
   // https://github.com/bahmutov/cypress-grep
   require("cypress-grep/src/plugin")(config);
+  on('before:run', async (details) => {
+    console.log('override before:run');
+    await beforeRunHook(details);
+    //If you are using other than Windows remove below two lines
+    await exec("IF EXIST cypress\\screenshots rmdir /Q /S cypress\\screenshots")
+    await exec("IF EXIST cypress\\reports rmdir /Q /S cypress\\reports")
+  });
+  on('after:run', async () => {
+    console.log('override after:run');
+    //if you are using other than Windows remove below line (having await exec)
+    await exec("npx jrm cypress/reports/junitreport.xml cypress/reports/junit/results-*.xml");
+    await afterRunHook();
+  });
 };
 
 module.exports = (on, config) => {
@@ -34,30 +43,3 @@ module.exports = (on, config) => {
 };
 
 require("@applitools/eyes-cypress")(module);
-
-const mysql = require("mysql");
-function queryTestDb(query, config) {
-  // creates a new mysql connection using credentials from cypress.json env's
-  const connection = mysql.createConnection(config.env.db);
-  // start connection to db
-  connection.connect();
-  // exec query + disconnect to db as a Promise
-  return new Promise((resolve, reject) => {
-    connection.query(query, (error, results) => {
-      if (error) reject(error);
-      else {
-        connection.end();
-        return resolve(results);
-      }
-    });
-  });
-}
-
-module.exports = (on, config) => {
-  on("task", {
-    queryDb: (query) => {
-      return queryTestDb(query, config);
-    },
-  }); //For running sql query
-};
-

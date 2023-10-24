@@ -13,7 +13,7 @@ pipeline{
   stages{
     stage('Build'){
       steps{
-        echo("Building application")
+        echo("Creando Build")
       }
     }
     stage('Testing'){
@@ -25,7 +25,7 @@ pipeline{
     }
     stage('Deploy'){
       steps{
-        echo "Deploy the application"
+        echo "Desplegando Build"
       }
     }
   }
